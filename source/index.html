@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="Ru">
+@include('partials/head.html')
+
+<body>
+  <main>
+    <div class="calculator-section">
+      <div class="container">
+        <div class="calculator-section__wrapp">
+          <h2 class="calculator-section__title">КАЛЬКУЛЯТОР МЕТАЛОПРОКАТУ ОНЛАЙН</h2>
+
+          <form class="calculator-section__form">
+            <div class="calculator-section__form-blocks">
+              <div class="calculator-section__block">
+                <div class="calculator-section__block-title">Метал / Марка</div>
+
+                <div class="calculator-section__block-content">
+                  <div class="calculator-section__block-selects">
+                    <div class='select'>
+                      <div class='select__header'>
+                        <span class='select__current'>Все</span>
+                        <div class='select__icon'>
+                          <svg width='20' height='5'>
+                            <use href='static/img/sprite/sprite.svg#arrow-down'></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class='select__body'>
+                        <ul class='select__wrapp'>
+                          <li class='select__item' data-choice='choosen'>Все</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class='select'>
+                      <div class='select__header'>
+                        <span class='select__current'>Все</span>
+                        <div class='select__icon'>
+                          <svg width='20' height='5'>
+                            <use href='static/img/sprite/sprite.svg#arrow-down'></use>
+                          </svg>
+                        </div>
+                      </div>
+                      <div class='select__body'>
+                        <ul class='select__wrapp'>
+                          <li class='select__item' data-choice='choosen'>Все</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calculator-section__block">
+                <div class="calculator-section__block-title">Тип прокату</div>
+                <div class="calculator-section__block-content">
+                  <ul class="calculator-section__block-types">
+                    <li class="kytik active" data-type="kytik">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#kytik'></use>
+                      </svg>
+                    </li>
+                    <li class="list" data-type="list">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#list'></use>
+                      </svg>
+                    </li>
+                    <li class="truba" data-type="tryba">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#tryba'></use>
+                      </svg>
+                    </li>
+                    <li class="krug" data-type="krug">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#krug'></use>
+                      </svg>
+                    </li>
+                    <li class="truba-profilna" data-type="truba-profilna">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#truba-profilna'></use>
+                      </svg>
+                    </li>
+                    <li class="kvadrat" data-type="kvadrat">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#kvadrat'></use>
+                      </svg>
+                    </li>
+                    <li class="shveler" data-type="shveler">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#shveler'></use>
+                      </svg>
+                    </li>
+                    <li class="smyga" data-type="smyga">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#smyga'></use>
+                      </svg>
+                    </li>
+                    <li class="balka" data-type="balka">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#balka'></use>
+                      </svg>
+                    </li>
+                    <li class="shestigrannik" data-type="shestigrannik">
+                      <svg width='38' height='38'>
+                        <use href='static/img/sprite/sprite.svg#shestigrannik'></use>
+                      </svg>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Кутик</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/kytik.webp'>
+                    <img width='444' height='386' src='static/img/types/kytik.png' alt='кутик'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Висота</span>
+                        <input class="calculator-section__form-input" type="text" name="value-height">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина стінки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Лист</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/list.webp'>
+                    <img width='295' height='386' src='static/img/types/list.png' alt='Лист'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина листа</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина листа</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Довжина листа</span>
+                        <input class="calculator-section__form-input" type="text" name="value-lenght">
+                        <p>мм</p>
+                      </label>
+                    </li>
+
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Кількість</span>
+                        <input class="calculator-section__form-input" type="text" name="value-amounts">
+                        <p>шт</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Труба</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/truba.webp'>
+                    <img width='399' height='357' src='static/img/types/truba.png' alt='Труба'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Діаметр</span>
+                        <input class="calculator-section__form-input" type="text" name="value-diametr">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина стінки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Круг / дріт / катанка</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/krug.webp'>
+                    <img width='399' height='357' src='static/img/types/krug.png' alt='Круг / дріт / катанка'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Діаметр</span>
+                        <input class="calculator-section__form-input" type="text" name="value-diametr">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">труба профільна</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/truba-profilna.webp'>
+                    <img width='429' height='386' src='static/img/types/truba-profilna.png' alt='Труба профільна'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Висота</span>
+                        <input class="calculator-section__form-input" type="text" name="value-height">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина стінки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">квадрат</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/kvadrat.webp'>
+                    <img width='380' height='325' src='static/img/types/kvadrat.png' alt='квадрат'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Швелер</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/shveler.webp'>
+                    <img width='546' height='377' src='static/img/types/shveler.png' alt='Швелер'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Висота</span>
+                        <input class="calculator-section__form-input" type="text" name="value-height">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина стінки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Стрічка / смуга</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/smuga.webp'>
+                    <img width='538' height='325' src='static/img/types/smuga.png' alt='Стрічка / смуга'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">балка</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/balka.webp'>
+                    <img width='538' height='325' src='static/img/types/balka.png' alt='балка'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Висота балки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-height">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Ширина балки</span>
+                        <input class="calculator-section__form-input" type="text" name="value-weight">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина перемички</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness-jumper">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Товщина полок</span>
+                        <input class="calculator-section__form-input" type="text" name="value-thickness-shelfs">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="calculator-section__content">
+              <div class="calculator-section__content-left">
+                <span class="calculator-section__content-heading">Шестигранник</span>
+
+                <div class="calculator-section__content-image">
+                  <picture>
+                    <source type='image/webp' srcset='static/img/types/shestigrannik.webp'>
+                    <img width='280' height='396' src='static/img/types/shestigrannik.png' alt='Шестигранник'>
+                  </picture>
+                </div>
+              </div>
+
+              <div class="calculator-section__content-right">
+                <div class="calculator-section__info">
+                  <span class="calculator-section__content-heading">РОЗРАХУНОК</span>
+
+                  <ul class="calculator-section__form-values">
+                    <li>
+                      <label class="calculator-section__form-label">
+                        <span>Номер (діаметр)</span>
+                        <input class="calculator-section__form-input" type="text" name="value-number-diametr">
+                        <p>мм</p>
+                      </label>
+                    </li>
+                  </ul>
+
+                  <button class="calculator-section__form-submit">
+                    Розрахувати
+                    <svg width='15' height='12'>
+                      <use href='static/img/sprite/sprite.svg#arrow-right'></use>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="calculator-section__result">
+                  <span class="calculator-section__result-heading">результат</span>
+
+                  <div class="calculator-section__result-info">
+                    <label class="calculator-section__form-label">
+                      <span>Довжина</span>
+                      <input class="calculator-section__form-input" type="text" name="result-lenght">
+                      <p>м</p>
+                    </label>
+                    <label class="calculator-section__form-label">
+                      <span>Вага</span>
+                      <input class="calculator-section__form-input" type="text" name="result-weight">
+                      <p>кг</p>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- <script src="static/js/main.js"></script> -->
+</body>
+
+</html>

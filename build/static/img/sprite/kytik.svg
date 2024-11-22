@@ -1,0 +1,7 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1_5_239" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0H0V36V48H12H48V36H12V0Z"/>
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M12 0H0V36V48H12H48V36H12V0Z" fill="white"/>
+<path d="M0 0V-0.8H-0.8V0H0ZM12 0H12.8V-0.8H12V0ZM0 48H-0.8V48.8H0V48ZM48 48V48.8H48.8V48H48ZM48 36H48.8V35.2H48V36ZM12 36H11.2V36.8H12V36ZM0 0.8H12V-0.8H0V0.8ZM0.8 36V0H-0.8V36H0.8ZM0.8 48V36H-0.8V48H0.8ZM12 47.2H0V48.8H12V47.2ZM48 47.2H12V48.8H48V47.2ZM47.2 36V48H48.8V36H47.2ZM12 36.8H48V35.2H12V36.8ZM11.2 0V36H12.8V0H11.2Z" fill="#3872FE" mask="url(#path-1-inside-1_5_239)"/>
+</svg>

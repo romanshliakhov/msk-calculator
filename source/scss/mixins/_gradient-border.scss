@@ -1,0 +1,17 @@
+@mixin gradient-border($background, $border-width) {
+    position: relative;
+    &::before {
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: #{$border-width};
+      background: #{$background};
+      -webkit-mask:
+         linear-gradient(#fff 0 0) content-box,
+         linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+  }
