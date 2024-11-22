@@ -1,5 +1,5 @@
 .calculator-section{
-  padding: 100px 0 70px;
+  padding: clamp(50px, 6.944vw, 100px) 0 clamp(50px, 4.861vw, 70px);
 
   &__wrapp {
     display: flex;
@@ -11,7 +11,7 @@
     padding-left: 16px;
     border-left: 11px solid var(--br-c);
     font-family: var(--font-montserrat);
-    font-size: 40px;
+    font-size: clamp(28px, 2.778vw, 40px);
     font-weight: 800;
     text-transform: uppercase;
     color: rgba(var(--cl-d),1.0);
@@ -30,28 +30,68 @@
     &-values {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      gap: 25px;
       gap: 15px;
+
+      @include for-tablet {
+        align-items: flex-end;
+      }
+
+      li {
+        position: relative;
+        padding-left: 55px;
+        counter-increment: list;
+
+        &::before {
+          content: counter(list);
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: rgba(var(--bg-c),1.0);
+          box-shadow: inset 2px 2px 2px 4px rgba(0, 0, 0, 0.25);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: var(--font-montserrat);
+          font-size: 22px;
+          line-height: 100%;
+          font-weight: 800;
+          color: rgba(var(--cl-a),1.0);
+          text-transform: uppercase;
+        }
+      }
     }
 
     &-label {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: clamp(10px, 1.042vw, 15px);
+
+      @include mobile {
+        width: 100%;
+      }
 
       span {
         font-family: var(--font-gilroy);
-        font-size: 30px;
-        font-size: 26px;
+        font-size: clamp(20px, 1.806vw, 26px);
         line-height: 100%;
         font-weight: 500;
+
+        @include for-mobile {
+          text-align: right;
+        }
+
+        @include mobile {
+          flex-grow: 1;
+        }
       }
 
       p {
         font-family: var(--font-gilroy);
-        font-size: 30px;
-        font-size: 26px;
+        font-size: clamp(24px, 1.806vw, 26px);
         line-height: 100%;
         font-weight: 300;
       }
@@ -59,12 +99,12 @@
 
     &-input {
       height: 40px;
-      width: 130px;
+      width: clamp(80px, 9.028vw, 130px);
       padding: 0 10px;
       background-color: rgba(var(--bg-a),1.0);
       border: 1px solid var(--br-e);
       font-family: var(--font-gilroy);
-      font-size: 25px;
+      font-size: clamp(20px, 1.736vw, 25px);
       line-height: 100%;
       font-weight: 400;
     }
@@ -73,7 +113,6 @@
       max-width: 440px;
       width: 100%;
       padding: 13px 0;
-      margin-left: auto;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -98,26 +137,51 @@
         color: rgba(var(--cl-c),1.0);
         background-color: rgba(var(--bg-a),1.0);
       }
+
+      @include for-tablet {
+        margin-left: auto;
+      }
+
+      @include tablet {
+        max-width: 100%;
+      }
     }
   }
 
   &__block {
     display: grid;
-    grid-template-columns: 360px 1fr;
+    grid-template-columns: clamp(220px, 18.75vw, 360px) 1fr;
     background-color: rgba(var(--bg-c),1.0);
 
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+
     &-title {
-      padding: 27px 27px 27px 66px;
-      border-right: 3px solid #fff;
+      border-right: 3px solid var(--br-a);
       font-family: var(--font-gilroy);
-      font-size: 30px;
+      font-size: clamp(22px, 2.083vw, 30px);
       line-height: 100%;
       font-weight: 500;
       color: rgba(var(--cl-e),1.0);
+
+      @include for-tablet {
+        padding: clamp(20px, 1.875vw, 27px) clamp(20px, 1.875vw, 27px) clamp(20px, 1.875vw, 27px) clamp(20px, 4.583vw, 66px);
+      }
+
+      @include tablet {
+        padding: 20px;
+      }
+
+      @media (max-width: 767px) {
+        padding-bottom: 0;
+        border-right: 0;
+        text-align: center;
+      }
     }
 
     &-content {
-      padding: 15px 40px;
+      padding: 15px clamp(15px, 2.778vw, 40px);
       display: flex;
       align-items: center;
     }
@@ -126,18 +190,22 @@
       width: 100%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 45px;
+      gap: 20px clamp(20px, 3.125vw, 45px);
+
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &-types {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: clamp(10px, 1.389vw, 20px);
 
       li {
-        width: 54px;
-        height: 54px;
+        width: clamp(50px, 5.273vw, 54px);
+        height: clamp(50px, 5.273vw, 54px);
         background-color: rgba(var(--bg-f),1.0);
         border: 2px solid var(--br-f);
         border-radius: 4px;
@@ -159,12 +227,23 @@
 
   &__content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     background-color: rgba(var(--bg-d), 0.74);
+
+    @include for-tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include tablet {
+      grid-template-columns: 40% 1fr;
+    }
+
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
 
     &-heading {
       font-family: var(--font-montserrat);
-      font-size: 30px;
+      font-size: clamp(22px, 2.083vw, 30px);
       line-height: 100%;
       font-weight: 800;
       text-transform: uppercase;
@@ -174,34 +253,49 @@
     &-image {
       flex-grow: 1;
       display: flex;
-      align-items: center;
       justify-content: center;
+
+      @include for-tablet {
+        align-items: center;
+      }
+
+      @include tablet {
+        align-items: flex-start;
+      }
     }
 
     &-left {
-      padding: 40px 65px 50px;
+      padding: clamp(30px, 3.906vw, 40px) clamp(30px, 4.514vw, 65px) clamp(30px, 4.883vw, 50px);
       display: flex;
       flex-direction: column;
-      gap: 25px;
+      gap: clamp(15px, 2.441vw, 25px);
       border-right: 2px solid var(--br-d);
+
+      @media (max-width: 767px) {
+        border-right: none;
+        padding: 30px 15px 10px;
+        gap: 30px;
+      }
     }
 
     &-right {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 40px;
+      gap: clamp(30px, 5.208vw, 40px);
     }
   }
 
   &__info {
-    padding: 40px 20px 0;
+    padding: clamp(20px, 5.208vw, 40px) clamp(15px, 2.604vw, 20px) 0;
     display: flex;
     flex-direction: column;
-    gap: 27px;
+    gap: clamp(20px, 3.516vw, 27px);
 
-    .calculator-section__content-heading {
-      margin-left: 50px;
+    @include for-tablet {
+      .calculator-section__content-heading {
+        margin-left: 50px;
+      }
     }
   }
 
@@ -212,13 +306,16 @@
     gap: 37px;
 
     &-heading {
-      margin-left: 30px;
       font-family: var(--font-montserrat);
-      font-size: 30px;
+      font-size: clamp(22px, 2.083vw, 30px);
       line-height: 100%;
       font-weight: 800;
       text-transform: uppercase;
       color: rgba(var(--cl-c),1.0);
+
+      @include for-tablet {
+        margin-left: clamp(24px, 2.083vw, 30px);
+      }
     }
 
     &-info {
@@ -226,6 +323,10 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
+
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+      }
     }
   }
 

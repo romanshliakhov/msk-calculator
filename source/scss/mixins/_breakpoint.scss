@@ -1,50 +1,50 @@
 /* stylelint-disable */
 
 @mixin for-big-desktop {
-  @media (min-width: (1920px)) {
+  @media (min-width: (1921px)) {
     @content;
   }
 }
 
 @mixin for-notebook {
-  @media (min-width: (1750px)) {
+  @media (min-width: (1751px)) {
     @content;
   }
 }
 
 @mixin for-desktop {
-  @media (min-width: (1440px)) {
+  @media (min-width: (1441px)) {
     @content;
   }
 }
 
 @mixin for-laptop  {
-  @media (min-width: (1240px)) {
+  @media (min-width: (1241px)) {
     @content;
   }
 }
 
 @mixin for-tablet {
-  @media (min-width: (1024px)) {
+  @media (min-width: (1025px)) {
     @content;
   }
 }
 
 @mixin for-small-tablet {
-  @media (min-width: (768px)) {
+  @media (min-width: (769px)) {
     @content;
   }
 }
 
 
 @mixin for-mobile {
-  @media (min-width: (576px)) {
+  @media (min-width: (577px)) {
     @content;
   }
 }
 
 @mixin for-ios {
-  @media (min-width: (415px)) {
+  @media (min-width: (416px)) {
     @content;
   }
 }
